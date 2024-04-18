@@ -1,0 +1,132 @@
+<nav class="navbar navbar-expand-lg bg-secondary navbar-dark">
+  <a class="navbar-brand" href="home">InHouseMarketPlace</a>
+<ul class = "navbar-nav">
+  <li class = "nav-item">
+      <a [routerLink]="'/resourcemodule'" routerLinkActive="active" class="nav-link">Resource</a>         
+  </li>
+  <li class = "nav-item">
+      <a [routerLink]="'/proposalmodule'" routerLinkActive="active" class="nav-link">Proposal</a>         
+  </li>
+  <!-- <li class = "nav-item">
+      <a [routerLink]="'/requirementmodule'" routerLinkActive="active" class="nav-link">Requirement</a>
+  </li>
+  <li class = "nav-item">
+      <a [routerLink]="'/offermodule'" routerLinkActive="active" class="nav-link">Offer</a>
+  </li> -->
+</ul>
+<ul class="navbar-nav ml-auto">
+  <li class = "nav-item">
+      <a [routerLink]="'/editemployee'" routerLinkActive="active" class="nav-link">Profile</a>         
+  </li>
+
+  <li class = "nav-item">
+      <a [routerLink]="''" routerLinkActive="active" class="nav-link">Logout</a>         
+  </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-5">
+      <li class = "nav-item">
+        <a [routerLink]="'/resourcemodule'" class="nav-link" >Resource List</a>
+    </li> 
+      <li class = "nav-item">
+        <a [routerLink]="'/offermodule'" class="nav-link" >Offer List</a>
+    </li>
+    <li class = "nav-item">
+      <a [routerLink]="'/add-offer'" class="nav-link" >Add Resource with Offer</a>
+  </li>            
+  </ul>
+  </div>
+</nav>
+<div class="col-md-6 offset-md-3">
+    <h3>  Update Resource Details </h3>
+        <form (ngSubmit) = "onSubmit()">
+
+          <div class="form-group">
+            <label>Resource ID</label>
+            <input type="text" class="form-control" id="resId"
+              [(ngModel)] = "offer.resId" name= "resId">
+          </div>
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" class="form-control" id="title"
+              [(ngModel)] = "offer.title" name= "title">
+          </div>
+
+        <div class="form-group">
+          <label>Category</label>
+          <select  id="category"  class="form-control" [(ngModel)] = "offer.category" name="category">
+              <option value="accessories">Accessories</option>
+              <option value="electronics">Electronics</option> 
+              <option value="automobiles">Automobiles</option>    
+          </select>          
+        </div>
+
+
+        <div class="form-group">
+            <label>Date</label>
+            <input type="date" class="form-control" id="date"
+              [(ngModel)] = "offer.date" name= "date">
+        </div>
+
+        <div class="form-group">
+          <label>Type</label>
+          <select  id="type" class="form-control" [(ngModel)] = "offer.type" name="type" >
+              <option value="laptop">Laptop</option>
+              <option value="mobile">Mobile</option> 
+              <option value="car">Car</option>
+              <option value="bike">Bike</option> 
+              <option value="powerbank">Powerbank</option>   
+          </select>          
+        </div>
+        
+        <div class="form-group">
+          <label>Description</label>
+          <input type="text" class="form-control" id="description"
+            [(ngModel)] = "offer.description" name= "description">
+      </div>
+
+        <div class="form-group">
+            <label>Price</label>
+            <input type="text" class="form-control" id="price"
+              [(ngModel)] = "offer.price" name= "price">
+        </div>
+
+        <div class="form-group">
+            <label>Employee_ID</label>
+            <input type="number" class="form-control" id="empId"
+              [(ngModel)] = "offer.empId" name= "empId">
+        </div>
+    <h4> Update Offer Details </h4>
+        <div class="form-group">
+            <label>Offer_ID</label>
+            <input type="number" class="form-control" id="offerId"
+              [(ngModel)] = "offer.offerId" name= "offerId">
+        </div>
+
+
+        <div class="form-group">
+          <label>Available</label>&nbsp;
+          <div>
+          <input type="radio" value="true" id="available"
+            [(ngModel)] = "offer.available" name= "available">True
+            &nbsp;<input type="radio" value="false" id="available"
+            [(ngModel)] = "offer.available" name= "available">False
+          </div>
+      </div>
+
+        <div class="form-group">
+            <label>Available_Upto</label>
+            <input type="date" class="form-control" id="availableUpto"
+              [(ngModel)] = "offer.availableUpto" name= "availableUpto">
+        </div>
+    
+            <button class="btn btn-success" type ="submit">Submit</button>&nbsp;&nbsp;&nbsp;
+            <button class="btn btn-info" type ="reset">Cancel</button>&nbsp;&nbsp;
+            <button type="button" class="btn btn-primary" (click)="gotolist()">Back</button>
+        </form>
+    </div>

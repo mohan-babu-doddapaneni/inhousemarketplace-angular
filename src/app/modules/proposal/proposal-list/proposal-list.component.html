@@ -1,0 +1,39 @@
+<h2> Proposals List</h2>
+<table class = "table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th> propId</th>
+            <th> proposal</th>
+            <th> amount</th>
+            <th> proposalDate</th>
+            <th> accepted</th>
+            <th> acceptedOn</th>
+            <th> resId</th>
+            <th> empId </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let proposal of proposals" >
+            <td>  {{ proposal.propId }} </td>
+            <td>  {{ proposal.proposal }} </td>
+            <td>  {{ proposal.amount }} </td>
+            <td>  {{ proposal.proposalDate }} </td>
+            <td>  {{ proposal.accepted }} </td>
+            <td>  {{ proposal.acceptedOn }} </td>
+            <td>  {{ proposal.resId }} </td>
+            <td>  {{ proposal.empId }} </td>
+            <td>
+                <button (click) = "updateProposal(proposal.propId)" class = "btn btn-info"> Update</button>
+                <button (click) = "getProposal(proposal.propId)" class = "btn btn-info" style="margin-left: 10px"> Get details</button>
+                <button (click) = "deleteProposal(proposal.propId)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "acceptProposal(proposal.propId)" class = "btn btn-success" style="margin-left: 10px"> Accept</button>
+                <button (click) = "declineProposal(proposal.propId)" class = "btn btn-danger" style="margin-left: 10px"> Decline</button>
+            </td>
+            
+        </tr>
+    </tbody>
+</table>
+<style>
+    h2,td,th{text-align: center;}
+</style>

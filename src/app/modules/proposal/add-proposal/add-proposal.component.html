@@ -1,0 +1,106 @@
+<nav class="navbar navbar-expand-lg bg-secondary navbar-dark">
+    <a class="navbar-brand" href="home">InHouseMarketPlace</a>
+<ul class = "navbar-nav">
+    <li class = "nav-item">
+        <a [routerLink]="'/resourcemodule'" routerLinkActive="active" class="nav-link">Resource</a>         
+    </li>
+    <li class = "nav-item">
+        <a [routerLink]="'/proposalmodule'" routerLinkActive="active" class="nav-link">Proposal</a>         
+    </li>
+    <!-- <li class = "nav-item">
+        <a [routerLink]="'/requirementmodule'" routerLinkActive="active" class="nav-link">Requirement</a>
+    </li>
+    <li class = "nav-item">
+        <a [routerLink]="'/offermodule'" routerLinkActive="active" class="nav-link">Offer</a>
+    </li> -->
+</ul>
+<ul class="navbar-nav ml-auto">
+  <li class = "nav-item">
+      <a [routerLink]="'/editemployee'" routerLinkActive="active" class="nav-link">Profile</a>         
+  </li>
+
+  <li class = "nav-item">
+      <a [routerLink]="''" routerLinkActive="active" class="nav-link">Logout</a>         
+  </li>
+  </ul>
+</nav>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-5">
+        <li class = "nav-item">
+          <a [routerLink]="'/proposalmodule'" class="nav-link" >Proposal List</a>
+      </li>
+      <li class = "nav-item">
+        <a [routerLink]="'/add-proposal'" class="nav-link" >Add Proposal</a>
+    </li>   
+    <li class = "nav-item">
+        <a [routerLink]="'/requirementmodule'" routerLinkActive="active" class="nav-link">Requirements List</a>
+    </li>         
+    </ul>
+    </div>
+  </nav>
+
+
+<div class="col-md-6 offset-md-3">
+    <h2>  Add Proposal </h2>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label> proposal</label>
+            <input type="text" class ="form-control" id = "proposal"
+                [(ngModel)] = "proposal.proposal" name = "proposal">
+        </div>
+    
+        <div class="form-group">
+            <label> amount</label>
+            <input type="number" class ="form-control" id = "amount"
+                [(ngModel)] = "proposal.amount" name = "amount">
+        </div>
+ 
+        <div class="form-group">
+            <label> proposalDate</label>
+            <input type="date" class ="form-control" id = "proposalDate"
+                [(ngModel)] = "proposal.proposalDate" name = "proposalDate">
+        </div>
+
+        <div class="form-group">
+            <label>Accepted</label>&nbsp;
+            <div>
+            <input type="radio" value="true" id="accepted"
+              [(ngModel)] = "proposal.accepted" name= "accepted">True
+              &nbsp;<input type="radio" value="false" id="accepted"
+              [(ngModel)] = "proposal.accepted" name= "accepted">False
+            </div>
+        </div>
+ 
+        <div class="form-group">
+            <label> acceptedOn</label>
+            <input type="date" class ="form-control" id = "acceptedOn"
+                [(ngModel)] = "proposal.acceptedOn" name = "acceptedOn">
+        </div>
+ 
+        <div class="form-group">
+            <label> resId</label>
+            <input type="number" class ="form-control" id = "resId"
+                [(ngModel)] = "proposal.resId" name = "resId">
+        </div>
+ 
+        <div class="form-group">
+            <label> empId</label>
+            <input type="number" class ="form-control" id = "empId"
+                [(ngModel)] = "proposal.empId" name = "empId">
+        </div>
+ 
+        <button class = "btn btn-success" type ="submit">Submit</button>&nbsp;&nbsp;
+        <button class="btn btn-info" type ="reset">Reset</button>&nbsp;&nbsp;
+        <button type="button" class="btn btn-primary" (click)="gotolist()">Back</button>
+    </form>
+    </div> 
+    <style>
+        h2{text-align: center;}
+    </style>

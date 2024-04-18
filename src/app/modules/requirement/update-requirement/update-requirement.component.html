@@ -1,0 +1,127 @@
+<nav class="navbar navbar-expand-lg bg-secondary navbar-dark">
+    <a class="navbar-brand" href="home">InHouseMarketPlace</a>
+<ul class = "navbar-nav">
+    <li class = "nav-item">
+        <a [routerLink]="'/resourcemodule'" routerLinkActive="active" class="nav-link">Resource</a>         
+    </li>
+    <li class = "nav-item">
+        <a [routerLink]="'/proposalmodule'" routerLinkActive="active" class="nav-link">Proposal</a>         
+    </li>
+    <li class = "nav-item">
+        <a [routerLink]="'/requirementmodule'" routerLinkActive="active" class="nav-link">Requirement</a>
+    </li>
+    <li class = "nav-item">
+        <a [routerLink]="'/offermodule'" routerLinkActive="active" class="nav-link">Offer</a>
+    </li>
+</ul>
+<ul class="navbar-nav ml-auto">
+  <li class = "nav-item">
+      <a [routerLink]="'/editemployee'" routerLinkActive="active" class="nav-link">Profile</a>         
+  </li>
+
+  <li class = "nav-item">
+      <a [routerLink]="''" routerLinkActive="active" class="nav-link">Logout</a>         
+  </li>
+  </ul>
+</nav>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <ul class = "navbar-nav">
+        <li class = "nav-item">
+            <a [routerLink]="'/requirementmodule'" routerLinkActive="active" class="nav-link" >Requirements List</a>
+        </li>
+        <li class = "nav-item">
+            <a [routerLink]="'/add-requirement'" routerLinkActive="active" class="nav-link" >Add Resource with Requirement</a>
+        </li>
+    </ul>
+</nav>
+<h3 class="text-center">Welcome To Requirement Module</h3>
+<div class="col-md-6 offset-md-3">
+    <h3>  Update Resource </h3>
+        <form (ngSubmit) = "onSubmit()">
+
+ 
+
+            <div class="form-group">
+                <label>Resource_ID</label>
+                <input type="number" class="form-control" id="resId"
+                  [(ngModel)] = "requirement.resId" name= "resId">
+            </div>
+         
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" class="form-control" id="title"
+                  [(ngModel)] = "requirement.title" name= "title">
+            </div>
+    
+            <div class="form-group">
+                <label>Description</label>
+                <input type="text" class="form-control" id="description"
+                  [(ngModel)] = "requirement.description" name= "description">
+            </div>
+    
+            <div class="form-group">
+                <label>Category</label>
+                <select  id="category"  class="form-control" [(ngModel)] = "requirement.category" name="category">
+                    <option value="accessories">Accessories</option>
+                    <option value="electronics">Electronics</option> 
+                    <option value="automobiles">Automobiles</option>    
+                </select>          
+              </div><br>
+   
+            <div class="form-group">
+                <label>Date</label>
+                <input type="date" class="form-control" id="date"
+                  [(ngModel)] = "requirement.date" name= "date">
+            </div>
+   
+            <div class="form-group">
+                <label>Type</label>
+                <select  id="type" class="form-control" [(ngModel)] = "requirement.type" name="type" >
+                    <option value="laptop">Laptop</option>
+                    <option value="mobile">Mobile</option> 
+                    <option value="car">Car</option>
+                    <option value="bike">Bike</option> 
+                    <option value="powerbank">Powerbank</option>   
+                </select>          
+              </div>
+    
+            <div class="form-group">
+                <label>Price</label>
+                <input type="text" class="form-control" id="price"
+                  [(ngModel)] = "requirement.price" name= "price">
+            </div>
+    
+            <div class="form-group">
+                <label>Employee_ID</label>
+                <input type="number" class="form-control" id="empId"
+                  [(ngModel)] = "requirement.empId" name= "empId">
+            </div>
+            <h4> Update Requirement Details </h4>
+            <div class="form-group">
+                <label>Requirement_ID</label>
+                <input type="number" class="form-control" id="reqId"
+                  [(ngModel)] = "requirement.reqId" name= "reqId">
+            </div>
+    
+            <div class="form-group">
+                <label>Fulfilled</label>&nbsp;
+                <div>
+                <input type="radio" value="true" id="fulfilled"
+                  [(ngModel)] = "requirement.fulfilled" name= "fulfilled">True
+                  &nbsp;<input type="radio" value="false" id="fulfilled"
+                  [(ngModel)] = "requirement.fulfilled" name= "fulfilled">False
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label>fulfilledOn</label>
+                <input type="date" class="form-control" id="fulfilledOn"
+                  [(ngModel)] = "requirement.fulfilledOn" name= "fulfilledOn">
+            </div>
+    
+            <button class="btn btn-success" type ="submit">Submit</button>&nbsp;&nbsp;&nbsp;
+            <button class="btn btn-info" type ="reset">Cancel</button>&nbsp;&nbsp;
+            <button type="button" class="btn btn-primary" (click)="gotolist()">Back</button>
+        </form>
+    </div>
